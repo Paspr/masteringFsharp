@@ -15,4 +15,4 @@ let rec isIthChar = function
 let rec occFromIth = function
  |(s,n,c) when n >= String.length s -> 0
  |(s,n,c) when s.[n] = c -> 1 + occFromIth(s, n + 1, c)
- |_ -> 0
+ |(s,n,c) -> occFromIth(s, n + 1, c)
