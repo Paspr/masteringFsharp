@@ -6,7 +6,7 @@ let rec helperMinimize = function
  | (gold, silver, copper) when copper >= copperInsilver -> helperMinimize(gold, silver + copper/copperInsilver, copper % copperInsilver)
  | (gold, silver, copper) when silver >= silverInGold -> helperMinimize(gold + silver / silverInGold, silver % silverInGold, copper)
  | (gold, silver, copper) when copper <= -copperInsilver || copper < 0 && (silver > 0 || gold > 0) -> helperMinimize(gold, silver -1, copperInsilver + copper)
- | (gold, silver, copper) when silver <= -silverInGold || (silver < 0 && gold > 0) -> helperMinimize (gold - 1, silverInGold + silver. pence)
+ | (gold, silver, copper) when silver <= -silverInGold || (silver < 0 && gold > 0) -> helperMinimize (gold - 1, silverInGold + silver, pence)
  | x -> x
 
 let (.+.) (x: int * int * int) (y: int * int * int) =
