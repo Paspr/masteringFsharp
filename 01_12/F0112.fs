@@ -14,4 +14,4 @@ let rec dnto (x: int) =
 let rec evenn (x: int) =
  match x with
  | 0 -> []
- | _ -> evenn (x-1) @ [2*x]
+ | _ -> evenn (x-1) @ [2*(x-1)]
