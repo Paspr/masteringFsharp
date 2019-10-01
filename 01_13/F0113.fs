@@ -2,7 +2,7 @@
 let rec rmodd xs =
     match xs with
     | x0 :: x1 :: xs -> x1 :: rmodd xs
-    | _ -> xs
+    | _ -> []
 
 
 // 39.2
