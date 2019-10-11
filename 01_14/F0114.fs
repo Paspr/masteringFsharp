@@ -53,6 +53,7 @@ let rec smallest (xs: int list): int =
  | x :: xs ->
    let m = smallest xs
    if x < m then x else m
+ | _ -> failwith "error"
 
 // 40.3.2
 let rec delete (n, xs) =
