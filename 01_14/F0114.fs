@@ -71,6 +71,14 @@ let rec sort (xs: int list): int list =
  | [] -> []
 
 // 40.4
-let rec revrev = function
- | x :: xs -> revrev xs @ [List.rev x]
- | _ -> []
+let revrev listOfLists =
+    let rec helper list firstList =
+        match list with
+        | [] -> firstList
+        | x::xs -> helper xs (x::firstList)
+
+    let rec reverseList list reversedList =
+        match list with 
+        | [] -> reversedList
+        | x::xs -> reverseList xs ((helper x [])::reversedList)
+    reverseList listOfLists []
