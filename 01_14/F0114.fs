@@ -65,7 +65,7 @@ let rec delete (n, xs) =
 // 40.3.3
 let rec sort (xs: int list): int list =
  match xs with
- | x :: xs' ->
+ | _x :: _xs' ->
   let m = smallest xs
   m :: sort (delete (m, xs))
  | [] -> []
