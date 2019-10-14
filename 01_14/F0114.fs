@@ -47,38 +47,27 @@ let rec minus (xs1, xs2) =
  | _ -> []
 
 // 40.3.1
-let rec smallest (xs: int list): int =
+let rec smallest (xs: int list) =
  match xs with
- | [x] -> x
- | x :: xs ->
-   let m = smallest xs
-   if x < m then x else m
- | _ -> failwith "error"
+ | [x] -> Some x
+ | xs -> Some (xs |> List.min)
 
 // 40.3.2
-let rec delete (n, xs) =
+let rec delete (n: int, xs: int list) = // 
  match xs with
  | x :: xs when x = n -> xs
  | x :: xs -> x :: delete (n, xs)
  | _ -> []
 
 // 40.3.3
-let rec sort (xs: int list): int list =
+let rec sort (xs: int list) =
  match xs with
  | _x :: _xs' ->
   let m = smallest xs
-  m :: sort (delete (m, xs))
+  m :: sort (delete (m.Value, xs))
  | [] -> []
 
 // 40.4
-let revrev listOfLists =
-    let rec helper list firstList =
-        match list with
-        | [] -> firstList
-        | x::xs -> helper xs (x::firstList)
-
-    let rec reverseList list reversedList =
-        match list with 
-        | [] -> reversedList
-        | x::xs -> reverseList xs ((helper x [])::reversedList)
-    reverseList listOfLists []
+let rec revrev = function
+ | x :: xs -> revrev xs @ [List.rev x]
+ | _ -> []
