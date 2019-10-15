@@ -63,8 +63,8 @@ let rec delete (n: int, xs: int list) = //
 let rec sort (xs: int list) =
  match xs with
  | _x :: _xs' ->
-  let m = smallest xs
-  m :: sort (delete (m.Value, xs))
+  let m = xs |> List.min
+  m :: sort (delete (m, xs))
  | [] -> []
 
 // 40.4
