@@ -19,7 +19,7 @@ let fibo n =
    let mutable x = 1
    let mutable y = 0
    let mutable counter = n
-   while counter >= 3 do
+   while counter >= 2 do
     let x1 = x + y
     y <- x
     x <- x1
