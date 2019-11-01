@@ -11,7 +11,9 @@ let f n =
 
 
 // 47.4.2
-let fibo n = 
+let fibo n =
+ if n=0 then 0
+ else
  if n=1 then 0
  else
    let mutable x = 1
