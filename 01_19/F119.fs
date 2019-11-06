@@ -6,7 +6,7 @@ let rec fibo1 n n1 n2 =
  | n -> fibo1 (n-1) (n1+n2) n1
 
 // 48.4.2
-let rec fibo2 c n =
+let rec fibo2 c n:int =
  match c with
  | 0 -> n 0
  | 1 -> n 1
