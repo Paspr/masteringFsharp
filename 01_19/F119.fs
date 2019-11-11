@@ -10,7 +10,7 @@ let rec fibo2 c n:int =
  match n with
  | 0 -> c 0
  | 1 -> c 1
- | n -> (fun x -> c(fibo2 (c) (n - 2))) (n-1)
+ | n -> (fun x -> c(fibo2 (c) (n - 1) + fibo2 (c) (n-2))) (n-1)
 
 // 48.4.3
 let rec bigList n k =
